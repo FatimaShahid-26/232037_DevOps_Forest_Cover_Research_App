@@ -42,7 +42,7 @@ jobs:
         run: |
           npx ng build \
             --configuration production \
-            --base-href /Forest_Cover_Research_App/
+            --base-href /232037_DevOps_Forest_Cover_Research_App/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
