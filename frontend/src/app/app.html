@@ -95,10 +95,15 @@
 
       </div>
 
+      <p *ngIf="isStaticDeployment" class="disclaimer">
+        This is the publicly hosted research demonstration.
+        Live machine learning predictions require the local Flask backend.
+      </p>
+
       <button
         class="predict-button"
         type="submit"
-        [disabled]="form.invalid || loading">
+        [disabled]="form.invalid || loading || isStaticDeployment">
 
         {{ loading ? 'Predicting...' : 'Predict Forest Cover' }}
 

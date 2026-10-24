@@ -22,6 +22,9 @@ import {
 })
 export class App {
 
+  isStaticDeployment =
+  window.location.hostname.endsWith('github.io');
+
   private fb = inject(FormBuilder);
   private predictionService = inject(PredictionService);
   private cdr = inject(ChangeDetectorRef);
@@ -78,6 +81,12 @@ export class App {
   loading = false;
 
   predict() {
+
+    if (this.isStaticDeployment) {
+      this.error =
+        'Live predictions are available in the local version of this application. Start the Flask backend and Angular development server to use the trained models.';
+      return;
+    }
 
       console.log('Predict button clicked');
       if (this.form.invalid || this.loading) {
