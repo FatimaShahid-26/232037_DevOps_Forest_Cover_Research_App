@@ -1,0 +1,37 @@
+# Python environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Node and Angular
+node_modules/
+.angular/
+dist/
+coverage/
+
+# Editor files
+.vscode/
+.idea/
+
+# Local datasets
+data/*.csv
+
+# Large generated model files
+backend/models/*.pkl
+backend/models/*.joblib
+
+# Local notebooks' intermediate model outputs
+notebooks/*.pkl
+notebooks/*.joblib
+
+# System files
+.DS_Store
+Thumbs.db

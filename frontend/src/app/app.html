@@ -1,0 +1,142 @@
+<main class="container">
+
+  <header class="hero">
+    <p class="eyebrow">ML RESEARCH APPLICATION</p>
+
+    <h1>Forest Cover Type Classification</h1>
+
+    <p>
+      Reproduction-based implementation of
+      Decision Tree, Random Forest, KNN and XGBoost
+      forest classification models.
+    </p>
+  </header>
+
+  <section class="panel">
+
+    <h2>Predict Forest Cover Type</h2>
+
+    <form [formGroup]="form" (ngSubmit)="predict()">
+
+      <div class="field">
+        <label for="model">Choose ML Algorithm</label>
+
+        <select id="model" formControlName="model">
+          <option
+            *ngFor="let m of models"
+            [value]="m.value">
+            {{ m.label }}
+          </option>
+        </select>
+      </div>
+
+      <h3>Environmental Features</h3>
+
+      <div class="form-grid">
+
+        <div
+          class="field"
+          *ngFor="let field of features">
+
+          <label [for]="field.name">
+            {{ field.label }}
+          </label>
+
+          <input
+            type="number"
+            [id]="field.name"
+            [formControlName]="field.name"
+            [min]="field.min"
+            [max]="field.max"
+            [step]="field.step || 1"
+          />
+
+        </div>
+
+      </div>
+
+      <h3>Geographical Categories</h3>
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="wilderness">
+            Wilderness Area
+          </label>
+
+          <select
+            id="wilderness"
+            formControlName="Wilderness_Area">
+
+            <option
+              *ngFor="let w of wildernessOptions"
+              [ngValue]="w">
+              Area {{ w }}
+            </option>
+
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="soil">Soil Type</label>
+
+          <select
+            id="soil"
+            formControlName="Soil_Type">
+
+            <option
+              *ngFor="let s of soilOptions"
+              [ngValue]="s">
+              Soil Type {{ s }}
+            </option>
+
+          </select>
+        </div>
+
+      </div>
+
+      <button
+        class="predict-button"
+        type="submit"
+        [disabled]="form.invalid || loading">
+
+        {{ loading ? 'Predicting...' : 'Predict Forest Cover' }}
+
+      </button>
+
+    </form>
+
+  </section>
+
+  <section class="panel result-panel" *ngIf="result">
+
+    <p class="eyebrow">PREDICTION RESULT</p>
+
+    <h2>{{ result.cover_name }}</h2>
+
+    <p>Cover Type: {{ result.prediction }}</p>
+
+    <p>Model: {{ result.model }}</p>
+
+    <p>
+      Predicted class probability:
+      {{ result.confidence }}%
+    </p>
+
+    <p class="disclaimer">
+      {{ result.disclaimer }}
+    </p>
+
+  </section>
+
+  <p class="error" *ngIf="error">
+    {{ error }}
+  </p>
+
+  <footer>
+    Based on the 2023 IEEE forest cover classification
+    research by E.B.R. Nagaesvara and colleagues.
+    Research reproduction / teaching prototype.
+  </footer>
+
+</main>
