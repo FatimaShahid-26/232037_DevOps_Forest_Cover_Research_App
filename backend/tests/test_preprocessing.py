@@ -8,7 +8,6 @@ sys.path.insert(0, str(ROOT / "backend"))
 
 from preprocessing import prepare_features
 
-
 BASE_FEATURES = [
     "Elevation",
     "Aspect",
