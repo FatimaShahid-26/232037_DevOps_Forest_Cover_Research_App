@@ -1,0 +1,6 @@
+Student Name: Fatima Shahid
+Roll no: 232037
+Class: BSSE-7A
+Subject: DevOps Lab
+Topic: Forest Cover type Research
+Date: 10th October, 2026
