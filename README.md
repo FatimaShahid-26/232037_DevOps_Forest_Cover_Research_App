@@ -1,6 +1,6 @@
 # Forest Cover Type Classification — Research Application
 
-A full-stack machine learning application developed as part of a DevOps laboratory project. This project implements an existing research study on forest cover type classification using four machine learning algorithms, without proposing a novel model or methodology.
+A full-stack machine learning application developed as part of a DevOps lab project. This project implements an existing research study on forest cover type classification using four machine learning algorithms.
 
 ## Research Paper
 
@@ -18,7 +18,7 @@ The objective is to develop a software application that demonstrates the forest 
 
 The application allows users to enter geographical and environmental measurements, select a classification algorithm, and obtain a predicted forest cover type.
 
-The project focuses on software engineering, model integration, automated testing, and CI/CD rather than introducing research novelty.
+The project focuses on software engineering, model integration, automated testing, and CI/CD.
 
 ## Dataset
 
@@ -122,6 +122,7 @@ Forest_Cover_Research_App/
 │       ├── ci.yml
 │       └── pages.yml
 ├── .gitignore
+├── Student_Introduction_File.txt
 └── README.md
 ```
 
@@ -242,7 +243,7 @@ The implemented notebook follows the classification objective and algorithms of 
 
 The models are trained on US forest cover data. Predictions should not be treated as validated classifications for other geographical regions without appropriate evaluation.
 
-The application is intended for research reproduction, education, and DevOps laboratory demonstration, not operational forestry decisions.
+The application is intended for research reproduction, and education, not operational forestry decisions.
 
 ## Academic Attribution
 
